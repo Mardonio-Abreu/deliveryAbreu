@@ -1,3 +1,5 @@
+import logo from "../assets/logo.png"
+import CartWidget from "./CartWidget";
 import Nav from "react-bootstrap/Nav";
 const NavBar = () => {
 
@@ -5,13 +7,21 @@ const NavBar = () => {
 
 <Nav variant="pills" defaultActiveKey="/home">
   <Nav.Item>
-    <Nav.Link href="/">Option 1</Nav.Link>
+    <Nav.Link>
+      <img src={logo} alt="company logo" />  
+    </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+    <Nav.Link eventKey="link-1 ">Comida</Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1">Option 3</Nav.Link>
+    <Nav.Link href="/">Tienda</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link eventKey="link-1">Farmacia</Nav.Link>
+  </Nav.Item>
+  <Nav.Item>
+    <Nav.Link><CartWidget numberOfProducts={5} /></Nav.Link>
   </Nav.Item>
 </Nav>
 );
