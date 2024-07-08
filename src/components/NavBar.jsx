@@ -5,27 +5,34 @@ const NavBar = () => {
 
     return (
 
-<Nav variant="pills" defaultActiveKey="/home">
+<Nav variant="pills">
   <Nav.Item>
-    <Nav.Link>
+    <Nav.Link to = "/category">
       <img src={logo} alt="company logo" />  
     </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1 ">Comida</Nav.Link>
+    <Nav.Link to = "/category">
+      Comida
+    </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link href="/">Tienda</Nav.Link>
+    <Nav.Link to = "/category">
+      Tienda
+    </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link eventKey="link-1">Farmacia</Nav.Link>
+    <Nav.Link to = "/category">
+      Farmacia
+    </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link><CartWidget numberOfProducts={5} /></Nav.Link>
+    <Nav.Link to = "/category">
+      <CartWidget numberOfProducts={5} /> 
+    </Nav.Link>
   </Nav.Item>
 </Nav>
 );
-
 };
 
 export default NavBar;

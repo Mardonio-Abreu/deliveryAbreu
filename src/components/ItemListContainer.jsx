@@ -1,7 +1,11 @@
-const ItemListContainer = ({message}) => {
+import ItemDetail from "./ItemDetail";
+const ItemListContainer = () => {
 
     return(
-        <p>{message}</p>
+        <>
+            <p>I am item list container</p>
+            <ItemDetail />
+        </>
     );
 
 };
