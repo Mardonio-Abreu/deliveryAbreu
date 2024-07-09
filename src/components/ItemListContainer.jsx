@@ -1,9 +1,11 @@
+import ItemList from "./ItemList";
 import ItemDetail from "./ItemDetail";
 const ItemListContainer = () => {
 
     return(
         <>
-            <p>I am item list container</p>
+            <h1>I am item list container</h1>
+            <ItemList />
             <ItemDetail />
         </>
     );
