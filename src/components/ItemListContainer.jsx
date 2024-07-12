@@ -1,10 +1,10 @@
 import ItemList from "./ItemList";
 import ItemDetail from "./ItemDetail";
+import { getProducts } from "../items";
 const ItemListContainer = () => {
 
     return(
         <>
-            <h1>I am item list container</h1>
             <ItemList />
             <ItemDetail />
         </>

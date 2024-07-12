@@ -1,7 +1,7 @@
-const items = [
+export const products = [
      
         {
-            item_id: 0,
+            id: 0,
             item:"Alkaseltzer",
             descripion:"caja con 6 unidades",
             price:30,
@@ -11,7 +11,7 @@ const items = [
 
         },
         {
-            item_id: 1,
+            id: 1,
             item:"aspirina",
             descripion:"paquete con 30 unidades",
             price: 50,
@@ -20,7 +20,7 @@ const items = [
             thumbnail: "thumbnailAspirina.jpg"
         },
         {
-            item_id: 2,
+            id: 2,
             item:"vitaminas",
             descripion:"complejo B",
             price: 128,
@@ -33,7 +33,7 @@ const items = [
 
     
         {
-            item_id:3,
+            id:3,
             item:"Hamburguesa",
             descripion:"hambueguesa con queso",
             price: 60,
@@ -42,7 +42,7 @@ const items = [
             thumbnail: "thumbnailHamburguesa.jpg"
         },
         {
-            item_id: 4,
+            id: 4,
             item:"Hotdog",
             descripion:"Hotdog con tocino",
             price: 35,
@@ -51,7 +51,7 @@ const items = [
             thumbnail: "thumbnailHotdog.jpg"
         },
         {
-            item_id: 5,
+            id: 5,
             item:"Pizza",
             descripion: "PIzza de peperoni",
             price: 150,
@@ -62,7 +62,7 @@ const items = [
     
     
         {
-            item_id: 6,
+            id: 6,
             item: "Azucar",
             descripion:"Un kilogramo de azucar",
             price: 26,
@@ -71,7 +71,7 @@ const items = [
             thumbnail: "thumbnailAzucar.jpg"
         },
         {
-            item_id: 7,
+            id: 7,
             item:"Ariel",
             descripion:"detergente para ropa, 1 kg",
             price: 75,
@@ -80,7 +80,7 @@ const items = [
             thumbnail: "thumbnail.jpg"
         },
         {
-            item_id: 8,
+            id: 8,
             item: "refrescos",
             descripion: "1 sprite, 1 Coca Cola, 1 Fanta",
             price: 60,
@@ -90,5 +90,39 @@ const items = [
         }
     
  ];
-
  
+
+ export const getProducts = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      return resolve(products)
+    }, 500)
+  })
+}
+
+export const getProductById = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log({products, id})
+      const product = products.find((p) => p.id === id)
+      if (product) return resolve(product)
+         return reject({ error: 'No encontrado' })
+    }, 500)
+  })
+}
+
+export const getProductsByCategory = (category) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log({products, id})
+        const product = products.filter( (product) => {
+          return product.category == category
+
+        })
+               
+        if (product) return resolve(product)
+           return reject({ error: 'No encontrado' })
+      }, 500)
+    })
+  }
+
