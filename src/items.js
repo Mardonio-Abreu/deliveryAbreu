@@ -1,6 +1,7 @@
 export const products = [
      
         {
+            categoryId: "Farmacia",
             id: 0,
             item:"Alkaseltzer",
             descripion:"caja con 6 unidades",
@@ -11,6 +12,7 @@ export const products = [
 
         },
         {
+            categoryId: "Farmacia",  
             id: 1,
             item:"aspirina",
             descripion:"paquete con 30 unidades",
@@ -20,6 +22,7 @@ export const products = [
             thumbnail: "thumbnailAspirina.jpg"
         },
         {
+            categoryId: "Farmacia",
             id: 2,
             item:"vitaminas",
             descripion:"complejo B",
@@ -33,6 +36,8 @@ export const products = [
 
     
         {
+            
+            categoryId: "comida",
             id:3,
             item:"Hamburguesa",
             descripion:"hambueguesa con queso",
@@ -42,6 +47,7 @@ export const products = [
             thumbnail: "thumbnailHamburguesa.jpg"
         },
         {
+            categoryId: "comida",  
             id: 4,
             item:"Hotdog",
             descripion:"Hotdog con tocino",
@@ -51,6 +57,7 @@ export const products = [
             thumbnail: "thumbnailHotdog.jpg"
         },
         {
+            categoryId: "comida",
             id: 5,
             item:"Pizza",
             descripion: "PIzza de peperoni",
@@ -62,6 +69,7 @@ export const products = [
     
     
         {
+            categoryId: "tienda",
             id: 6,
             item: "Azucar",
             descripion:"Un kilogramo de azucar",
@@ -71,6 +79,7 @@ export const products = [
             thumbnail: "thumbnailAzucar.jpg"
         },
         {
+            categoryId: "tienda",
             id: 7,
             item:"Ariel",
             descripion:"detergente para ropa, 1 kg",
@@ -80,6 +89,7 @@ export const products = [
             thumbnail: "thumbnail.jpg"
         },
         {
+            categoryId: "tienda",
             id: 8,
             item: "refrescos",
             descripion: "1 sprite, 1 Coca Cola, 1 Fanta",

@@ -7,22 +7,22 @@ const NavBar = () => {
 
 <Nav variant="pills">
   <Nav.Item>
-    <Nav.Link to = "/category">
+    <Nav.Link to = "/">
       <img src={logo} alt="company logo" />  
     </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link to = "/category">
+    <Nav.Link to = "/category/comida">
       Comida
     </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link to = "/category">
+    <Nav.Link to = "/category/tienda">
       Tienda
     </Nav.Link>
   </Nav.Item>
   <Nav.Item>
-    <Nav.Link to = "/category">
+    <Nav.Link to = "/category/farmacia">
       Farmacia
     </Nav.Link>
   </Nav.Item>
