@@ -1,28 +1,23 @@
-import { getProducts } from "../items";
-import {Cards} from "./Card";
+import { useState } from 'react';
+import { app } from '../firebase'
 
 const ItemList = () => {
 
-    const items = getProducts();
-    console.log(items);
-    return(<h1>Surprise MotherFather!</h1>)
+    const [items, setItems] = useState([]);
 
-}
-
-    /* return(
-        <>
-            {items.map( (item) => (
-
-                <Cards item={item} />
-
-            )
-
-            )}
-        </>
-    );
+    db.collection('items').get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+          setItems(items => [...items ,[doc.id, doc.data()]]);
+        });
+      });
     
+    console.log(items);
 
-}
- */
+    return(
+        <h1>I am an item category list</h1>
+    );
+
+
+};
 
 export default ItemList;
