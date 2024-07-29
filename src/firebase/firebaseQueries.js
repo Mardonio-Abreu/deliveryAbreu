@@ -1,6 +1,11 @@
 import { addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where, deleteDoc } from 'firebase/firestore'
 import { db } from './firebaseConfig' 
 
+export const getAllItems = () => {
+  const allItems = collection(db, 'items');
+  return getDocs(allItems)
+}
+
 export const getItem = (id) => {
   const item = doc(db, 'items', id)
   return getDoc(item)

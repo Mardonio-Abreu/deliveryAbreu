@@ -1,13 +1,8 @@
-import ItemList from "./ItemList";
-const ItemListContainer = () => {
-
-    
+import { ItemList } from "./ItemList";
+export  const ItemListContainer = () => {
+  
     return(
-        <>
-            <ItemList />
-        </>
+        <ItemList />
     );
+}
 
-};
-
-export default ItemListContainer;

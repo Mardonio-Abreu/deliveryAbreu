@@ -1,12 +1,25 @@
-import { getItems } from "../firebase/firebaseQueries";
-const ItemDetail = () => {
+import { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 
-  const items = getItems('Tienda');
-  console.log(items)
+export const ItemList = () => {
 
-  return(
-    <h1>Surprise MotherFather!</h1>
+    useEffect(() =>{
+      const [allItems, setAllItems] = useState([]);
+      const db = getFirestore();
+
+      const itemsCollection = collection(db, "items");
+      getDocs(itemsCollection).then((snapshot) => {
+        setAllItems(snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+        console.log(allItems);
+      });
+    },[]);
+
+    
+
+    return(
+      
+      <h1>Surprise MotherFather!</h1>
   );
 };
 
-export default ItemDetail;
+
