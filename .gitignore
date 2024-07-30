@@ -25,4 +25,4 @@ dist-ssr
 
 # keys
 
-/src/db/db.js
+db*
