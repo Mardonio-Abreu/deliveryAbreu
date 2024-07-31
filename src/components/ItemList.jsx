@@ -1,5 +1,8 @@
-export const ItemList = () => {
-  return(<h1>I am an Item List</h1>);
+import BasicCard from "./Card";
+
+export const ItemList = ({item}) => {
+
+  return<BasicCard item={item} />;
   
 };
 

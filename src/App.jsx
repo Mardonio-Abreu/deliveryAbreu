@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import ItemDetail from './components/ItemDetail';
-import ItemCategoryList from './components/ItemCategoryList';
 import {ItemListContainer} from './components/ItemListContainer';
 
 const App = () => {

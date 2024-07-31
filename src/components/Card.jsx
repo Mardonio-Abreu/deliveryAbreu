@@ -1,19 +1,22 @@
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-export const Cards = ({item}) => {
-    
-    return(
 
-             <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title>{item.item}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{item.category}</Card.Subtitle>
-                    <Card.Text>
-                        {item.description}
-                    </Card.Text>
-                    <Card.Link href="#">Card Link</Card.Link>
-                </Card.Body>
-             </Card>
+function BasicCard({item}) {
+  return (
+    <>
+    <h1>"Surprise MotherFather!"</h1>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>{item.title}</Card.Title>
+        <Card.Text>
+          {item.price}
+        </Card.Text>
+        <Button variant="primary">Add to cart</Button>
+      </Card.Body>
+    </Card>
+    </>
+  );
+}
 
-    );
-};
-
+export default BasicCard;
