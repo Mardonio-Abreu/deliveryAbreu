@@ -1,8 +1,8 @@
 import db from "../db/db.js"
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import {ItemList} from "./ItemList.jsx"
 import { useParams } from "react-router-dom";
+import BasicCard from "./Card.jsx";
 
 
 const getItems = () => {
@@ -28,12 +28,12 @@ const getFiltertedItems = (categoryId) => {
 });
 };
 
-const itemCards = ({items}) => {
+const itemCards = (items) => {
     return(
          <div className="ItemCards">
           {
-            items.map((item) => {
-              <ItemList item={item}/>
+            items.map(({item}) => {
+              return <BasicCard item={item} />
             })
           };
         
@@ -52,10 +52,10 @@ export const ItemListContainer = () => {
     
   if(categoryId){
     setItems(getFiltertedItems(categoryId));
-    itemCards({items});
+    itemCards(items);
   } else {
     setItems(getItems());
-    itemCards({items});
+    itemCards(items);
   }
   }, [categoryId]);
 };
