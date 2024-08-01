@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'
 import ItemDetail from './components/ItemDetail';
 import {ItemListContainer} from './components/ItemListContainer';
-
+import '/src/App.css'
 const App = () => {
   
   return (
