@@ -1,7 +1,8 @@
+import { NavLink } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function BasicCard({item}) {
+const BasicCard = ({item}) => {
   return (
     <>
     <Card style={{ width: '18rem' }}>
@@ -11,7 +12,9 @@ function BasicCard({item}) {
         <Card.Text>
           {item.price}
         </Card.Text>
-        <Button variant="primary">Add to cart</Button>
+        <NavLink href={`/item/${item.id}`}>
+          <Button variant="primary">See item</Button>
+        </NavLink>
       </Card.Body>
     </Card>
     </>
