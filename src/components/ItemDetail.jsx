@@ -6,18 +6,15 @@ import { ItemCard } from "./ItemCard";
 
 const getItemById = async (itemId) => {
   const docRef = doc(db, "items", itemId);
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
-    return docSnap.data();
-  } else {
-    console.log("No such document");
-    return null; // Ensure a return value
-  }
+  const ans = await getDocs(docRef);
+  const data = ans.docs.map((itemDB) => {
+        return { id: itemDB.id, ...itemDB.data() };
+    });
+    return data;
 };
 
 const ItemDetail = () => {
-  const [item, setItem] = useState(null); // Initialize with null or a default value
+  const [item, setItem] = useState(null);
   const { itemId } = useParams();
 
   useEffect(() => {
