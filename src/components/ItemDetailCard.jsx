@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import ItemQuantityForm from '../ItemQuntityForm';
 
 const ItemDetailCard = ({producto}) => {
   return (
@@ -12,6 +13,7 @@ const ItemDetailCard = ({producto}) => {
           <p>{producto.description}</p>
           <p>{`Precio: ${producto.precio}`}</p>
         </Card.Text>
+          <ItemQuantityForm/>
           <Button variant="primary">Add item</Button>
       </Card.Body>
     </Card>

@@ -4,18 +4,20 @@ import ItemDetail from './components/ItemDetailContainer';
 import {ItemListContainer} from './components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css'
+import { CartProvider } from './context/CartContext';
 const App = () => {
   
   return (
     <>
-      
-      <NavBar />
       <Router>
+        <CartProvider>
+        <NavBar />
         <Routes>
           <Route path = "/" element = {<ItemListContainer />}/>
           <Route path = "/category/:categoryId" element = {<ItemListContainer />} />
           <Route path = "/item/:itemId" element = {<ItemDetail />} />         
         </Routes>
+        </CartProvider>
       </Router>
     </>
   );
