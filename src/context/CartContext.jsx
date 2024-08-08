@@ -22,11 +22,15 @@ const CartProvider = ({children}) => {
         setCartItems(newCartItemArray);
     };
 
-    const cartItemsQuantity = () => {
-        
-        return cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartItemsQuantity = (() => {
+        let counter = 0;
+        cartItems.forEach((item) => {
+            counter = counter + item.quantity;
+        });
 
-    }
+        return counter;
+
+    });
 
     return (
         <CartContext.Provider value={{cartItems, addCartItem, deleteCartItem, cartItemsQuantity}}>

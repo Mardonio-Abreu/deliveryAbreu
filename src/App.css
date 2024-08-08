@@ -5,3 +5,8 @@
   text-align: left;
   display:inline-flex;
  }
+
+ .NavBar {
+  display: inline-flex;
+  align-content: space-between;
+ }
