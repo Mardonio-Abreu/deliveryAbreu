@@ -33,7 +33,7 @@ const ItemCards = ({ items }) => {
     );
 };
 
-export const ItemListContainer = () => {
+const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const { categoryId } = useParams();
 
@@ -52,3 +52,5 @@ export const ItemListContainer = () => {
 
     return <ItemCards items={items} />;
 };
+
+export default ItemListContainer;

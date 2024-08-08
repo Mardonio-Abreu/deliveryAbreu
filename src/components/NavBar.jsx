@@ -1,9 +1,25 @@
 import logo from "../assets/logo.png"
 import CartWidget from "./CartWidget";
 import Nav from "react-bootstrap/Nav";
+import { useContext, useState, useEffect } from "react";
+import { CartContext } from "../context/CartContext";
 const NavBar = () => {
 
-return (
+  const {cartItemsQuantity} = useContext(CartContext);
+  const [itemsQuantity, setItemsQuantity] = useState(0);
+
+  useEffect(( ) => {
+
+    const newQuantity = () => {
+      setItemsQuantity(cartItemsQuantity());
+    }
+
+    newQuantity();
+  }, [])
+
+  
+
+  return (
 
           <Nav variant="pills">
             
@@ -33,14 +49,15 @@ return (
               </Nav.Item>
             </Nav.Link>
             
-            <Nav.Link href = "/">
+            <Nav.Link href = "/cart">
               <Nav.Item>
-                 <CartWidget numberOfProducts={5} /> 
+                 <CartWidget numberOfProducts={itemsQuantity} /> 
               </Nav.Item>
             </Nav.Link>
           
           </Nav>
         );
-      };
+
+};
 
 export default NavBar;

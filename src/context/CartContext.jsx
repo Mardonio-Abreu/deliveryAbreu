@@ -6,30 +6,36 @@ const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
 
     const addCartItem = (itemId, quantity) => {
-        setCartItems(...cartItems, {id: itemId, quantity: quantity});
+        setCartItems((prevCartItems) => {
+            const itemIndex = prevCartItems.findIndex(item => item.id === itemId);
+            if (itemIndex > -1) {
+                const updatedCartItems = [...prevCartItems];
+                updatedCartItems[itemIndex].quantity += quantity;
+                return updatedCartItems;
+            }
+            return [...prevCartItems, {id: itemId, quantity: quantity}];
+        });
     };
-
+      
     const deleteCartItem = (itemId) => {
-        const cartItemsArray = cartItems;
-        const newCartItemArray = cartItems.filter((item) => item.id != itemId);
+        const newCartItemArray = cartItems.filter((item) => item.id !== itemId);
         setCartItems(newCartItemArray);
     };
 
     const cartItemsQuantity = () => {
-        let counter = 0;
-        cartItems.forEach(item => {
-            counter = counter + item.quantity;
-       });
-       return quantity;
+        
+        return cartItems.reduce((total, item) => total + item.quantity, 0);
 
     }
 
     return (
-        <CartContext.Provider>
+        <CartContext.Provider value={{cartItems, addCartItem, deleteCartItem, cartItemsQuantity}}>
             {children}
         </CartContext.Provider>
     );
 };
 
-export {CartProvider, CartContext, addCartItem, deleteCartItem, cartItemsQuantity};
+export {CartProvider, CartContext};
+
+
 

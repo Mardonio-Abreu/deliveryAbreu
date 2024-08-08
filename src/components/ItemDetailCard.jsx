@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemQuantityForm from '../ItemQuntityForm';
+import ItemQuantityForm from './ItemQuantityForm';
 
 const ItemDetailCard = ({producto}) => {
   return (
@@ -10,11 +10,12 @@ const ItemDetailCard = ({producto}) => {
       <Card.Body>
         <Card.Title>{producto.title}</Card.Title>
         <Card.Text>
-          <p>{producto.description}</p>
-          <p>{`Precio: ${producto.precio}`}</p>
+          {producto.description}
         </Card.Text>
-          <ItemQuantityForm/>
-          <Button variant="primary">Add item</Button>
+        <Card.Text>
+          {`Precio: ${producto.precio}`}
+        </Card.Text>
+        <ItemQuantityForm itemId={producto.id}/>
       </Card.Body>
     </Card>
     </>
