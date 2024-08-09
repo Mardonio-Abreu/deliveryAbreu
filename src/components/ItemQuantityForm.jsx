@@ -6,9 +6,7 @@ import Button from 'react-bootstrap/Button';
 const ItemQuantityForm = ({ itemId }) => { // Use destructuring to access itemId
 
   const { addCartItem } = useContext(CartContext);
-
-  const handleChange = () => {}
-  
+   
   const handleSubmit = (e) => {
       e.preventDefault();
       const selectedValue = Number(e.target.quantity.value); // Access the select element's value by its name attribute

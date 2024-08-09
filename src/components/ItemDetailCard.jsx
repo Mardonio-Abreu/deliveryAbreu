@@ -1,20 +1,20 @@
 import Card from 'react-bootstrap/Card';
 import ItemQuantityForm from './ItemQuantityForm';
 
-const ItemDetailCard = ({producto}) => {
+const ItemDetailCard = ({item}) => {
   return (
     <>
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={`/src/img/${producto.thumbnail}`} />
+      <Card.Img variant="top" src={`/src/img/${item.thumbnail}`} />
       <Card.Body>
-        <Card.Title>{producto.title}</Card.Title>
+        <Card.Title>{item.title}</Card.Title>
         <Card.Text>
-          {producto.description}
+          {item.description}
         </Card.Text>
         <Card.Text>
-          {`Precio: ${producto.precio}`}
+          {`Precio: ${item.precio}`}
         </Card.Text>
-        <ItemQuantityForm itemId={producto.id}/>
+        <ItemQuantityForm itemId={item.id}/>
       </Card.Body>
     </Card>
     </>

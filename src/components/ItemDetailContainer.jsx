@@ -5,25 +5,25 @@ import { useParams } from "react-router-dom"
 import { doc, getDoc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState({})
+  const [item, setItem] = useState({})
 
   const { itemId } = useParams()
 
-  const obtenerProducto = () => {
+  const getItem = () => {
     const docRef = doc( db, "items", itemId )
     getDoc(docRef)
       .then((respuesta) => {
         const data = { id: respuesta.id, ...respuesta.data() }
-        setProducto(data)
+        setItem(data);
       })
   }
 
   useEffect(()=> {
-    obtenerProducto()
-  }, [])
+    getItem();
+  }, []);
 
   return (
-    <ItemDetailCard producto={producto} />
+    <ItemDetailCard item={item} />
   )
 }
-export default ItemDetailContainer
+export default ItemDetailContainer;

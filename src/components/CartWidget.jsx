@@ -1,14 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import cartLogo from "./../assets/cartWidget.png"
 const CartWidget = () => {
 
-    const {cartItemsQuantity} = useContext(CartContext);
+    const {cartItemsQuantity, cartItems} = useContext(CartContext);
+    const [itemsNumber, setItemsNumber] = useState();
+
+    useEffect( () => {
+        setItemsNumber(cartItemsQuantity());
+    },[cartItems]);
+
 
 
     return (
         <> 
-            <p><img src={cartLogo} alt="cart logo" />{cartItemsQuantity()}</p>
+            <p><img src={cartLogo} alt="cart logo" />{itemsNumber}</p>
         </>
     )
 }

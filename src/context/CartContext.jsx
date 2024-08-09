@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { useState } from "react";
-const CartContext = createContext();
 
+
+const CartContext = createContext();
 const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
 
@@ -25,7 +26,7 @@ const CartProvider = ({children}) => {
     const cartItemsQuantity = (() => {
         let counter = 0;
         cartItems.forEach((item) => {
-            counter = counter + item.quantity;
+            counter += item.quantity;
         });
 
         return counter;
