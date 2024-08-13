@@ -14,7 +14,7 @@ const ItemDetailCard = ({item}) => {
         <Card.Text>
           {`Precio: ${item.precio}`}
         </Card.Text>
-        <ItemQuantityForm itemId={item.id}/>
+        <ItemQuantityForm item={item}/>
       </Card.Body>
     </Card>
     </>

@@ -5,24 +5,22 @@ import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css'
-import { useContext } from 'react';
 import { CartProvider } from './context/CartContext';
+
 const App = () => {
-  
+ 
   return (
-    <>
+    <CartProvider> 
       <Router>
-        <CartProvider  >
-        <NavBar />
+      <NavBar/> 
         <Routes>
           <Route path = "/" element = {<ItemListContainer />}/>
           <Route path = "/category/:categoryId" element = {<ItemListContainer />} />
           <Route path = "/item/:itemId" element = {<ItemDetail />} />
           <Route path = "/cart" element = {<Cart />}/>         
         </Routes>
-        </CartProvider>
       </Router>
-    </>
+    </CartProvider>
   );
 };
 

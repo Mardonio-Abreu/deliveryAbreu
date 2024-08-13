@@ -3,14 +3,14 @@ import { useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-const ItemQuantityForm = ({ itemId }) => { // Use destructuring to access itemId
+const ItemQuantityForm = ({ item }) => { // Use destructuring to access itemId
 
   const { addCartItem } = useContext(CartContext);
    
   const handleSubmit = (e) => {
       e.preventDefault();
-      const selectedValue = Number(e.target.quantity.value); // Access the select element's value by its name attribute
-      addCartItem(itemId, selectedValue);    
+      const quantity = Number(e.target.quantity.value); // Access the select element's value by its name attribute
+      addCartItem(item, quantity);    
   } 
 
   return (

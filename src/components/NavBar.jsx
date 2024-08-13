@@ -2,21 +2,22 @@ import logo from "../assets/logo.png"
 import CartWidget from "./CartWidget";
 import Nav from "react-bootstrap/Nav";
 import DropdownMenu from "./Dropdown";
+import { Link } from "react-router-dom";
 const NavBar = () => {
 
   return (
     <Nav variant="pills">
       <Nav.Item>
-        <Nav.Link href="/">
+        <Link to="/">
           <img src={logo} alt="company logo" />
-        </Nav.Link>
+        </Link>
       </Nav.Item>
       <div className="NavBar">
        <DropdownMenu />   
        <Nav.Item>
-         <Nav.Link href="/cart">
+         <Link to="/cart">
            <CartWidget />
-         </Nav.Link>
+         </Link>
        </Nav.Item>
       </div>
     </Nav>

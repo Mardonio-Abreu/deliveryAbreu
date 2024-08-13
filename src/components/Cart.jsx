@@ -3,11 +3,19 @@ import { CartContext } from "../context/CartContext";
 const Cart = () => {
 
     const {cartItems} = useContext(CartContext);
-       
+    console.log(cartItems);
+    
     return(
-
-        <h1>I am an empty cart!</h1>
-
+        <div> 
+            {
+                
+                    <div key={cartItems[0].id}>
+                        <h1>I am a cart!</h1>
+                        
+                    </div>
+                
+            }
+        </div>
     );
 
 }
