@@ -1,5 +1,5 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-
+import { Link } from 'react-router-dom';
 const DropdownMenu = ()  => {
   return (
     <Dropdown ata-bs-theme="dark">
@@ -8,9 +8,9 @@ const DropdownMenu = ()  => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item href="/category/Comida">Comida</Dropdown.Item>
-        <Dropdown.Item href="/category/Farmacia">Farmacia</Dropdown.Item>
-        <Dropdown.Item href="/category/Tienda">Tienda</Dropdown.Item>
+        <Dropdown.Item><Link to={"/category/Comida"}>Comida</Link></Dropdown.Item>
+        <Dropdown.Item><Link to={"/category/Farmacia"}>Farmacia</Link></Dropdown.Item>
+        <Dropdown.Item><Link to={"/category/Tienda"}>Tienda</Link></Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

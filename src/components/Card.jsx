@@ -1,4 +1,4 @@
-import { NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -12,9 +12,9 @@ const BasicCard = ({item}) => {
         <Card.Text>
           {item.price}
         </Card.Text>
-        <NavLink href={`/item/${item.id}`}>
+        <Link to={`/item/${item.id}`}>
           <Button variant="primary">See item</Button>
-        </NavLink>
+        </Link>
       </Card.Body>
     </Card>
     </>
