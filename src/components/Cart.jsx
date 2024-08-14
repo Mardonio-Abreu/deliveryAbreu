@@ -4,7 +4,16 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const Cart = () => {
-    const { cartItems, cartTotalPayment } = useContext(CartContext);
+    const { cartItems } = useContext(CartContext);
+
+    const totalAmount = ( ) => {
+        let sum = 0;
+        cartItems.map((item) => {
+            sum += item.quantity * item.precio;
+        });
+        return sum;
+        
+    }
 
     if (cartItems.length === 0){
         return(
@@ -25,10 +34,10 @@ const Cart = () => {
                             <p>{item.title}</p>
                             <img src={`/src/img/${item.thumbnail}`} alt="Alkaseltzer image" />
                             <p>{`Precio: ${item.precio} `}</p>
-                            <p>{`Cantidad: ${item.quantity} `}</p>
+                            
                         </div>
                     ))}
-                    <p>{`Total: ${cartTotalPayment()}`}</p>
+                    <p>{`Total: ${totalAmount()}`}</p>
                     <Link to={"/checkout"}>
                         <Button variant="primary">Checkout</Button>
                     </Link>
