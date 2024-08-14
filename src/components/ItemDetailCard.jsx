@@ -12,7 +12,7 @@ const ItemDetailCard = ({item}) => {
           {item.description}
         </Card.Text>
         <Card.Text>
-          {`Precio: ${item.precio}`}
+          {`Precio: ${item.price}`}
         </Card.Text>
         <ItemQuantityForm item={item}/>
       </Card.Body>

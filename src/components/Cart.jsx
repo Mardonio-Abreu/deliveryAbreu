@@ -9,7 +9,7 @@ const Cart = () => {
     const totalAmount = ( ) => {
         let sum = 0;
         cartItems.map((item) => {
-            sum += item.quantity * item.precio;
+            sum += item.quantity * item.price;
         });
         return sum;
         
@@ -33,7 +33,8 @@ const Cart = () => {
                         <div className="cartItem" key={item.id}>
                             <p>{item.title}</p>
                             <img src={`/src/img/${item.thumbnail}`} alt="Alkaseltzer image" />
-                            <p>{`Precio: ${item.precio} `}</p>
+                            <p>{`Unidades: ${item.quantity}`}</p>
+                            <p>{`Precio: ${item.price} `}</p>
                             
                         </div>
                     ))}

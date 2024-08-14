@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import CheckoutForm from "./CheckoutForm"
 const Checkout = ( ) => {
     const {cartItems} = useContext(CartContext);
 
@@ -9,11 +10,18 @@ const Checkout = ( ) => {
             sum += item.quantity * item.precio;
         });
         return sum;
+    };
 
     
     return(
-        <h1>I am the checkout!</h1>
-    )
+        <>
+            <h1>I am the checkout!</h1>
+            <p>{`Total: ${totalAmount()}`}</p>
+            <CheckoutForm />      
+        </>
+        
+        
+    );
 }
 
-export default Checkout; 
+export default Checkout;
