@@ -42,6 +42,16 @@ const CartProvider = ({children}) => {
         
     };
 
+    const cartTotalPayment = ( ) => {
+        let sum = 0;
+        cartItems.forEach((item) => {
+            sum += Number(item.precio*quantity);
+            
+        })
+        return sum;
+        
+    };
+
     const deleteCart = () => {
         setCartItems([]);
     };
@@ -50,7 +60,7 @@ const CartProvider = ({children}) => {
     console.log(cartItems);
       
     return (
-        <CartContext.Provider value={{cartItems,  addCartItem, deleteCartItem, deleteCart, cartItemsQuantity}}>
+        <CartContext.Provider value={{cartItems,  addCartItem, deleteCartItem, deleteCart, cartItemsQuantity, cartTotalPayment}}>
             {children}
         </CartContext.Provider>
     );

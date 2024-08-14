@@ -10,3 +10,8 @@
   display: inline-flex;
   align-content: space-between;
  }
+
+ .cartItem {
+  display: inline-flex;
+  margin: 15px;
+ }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const Cart = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, cartTotalPayment } = useContext(CartContext);
 
     if (cartItems.length === 0){
         return(
@@ -21,13 +21,14 @@ const Cart = () => {
             return (
                 <div className="cart">
                     {cartItems.map((item) => (
-                        <div key={item.id}>
+                        <div className="cartItem" key={item.id}>
                             <p>{item.title}</p>
                             <img src={`/src/img/${item.thumbnail}`} alt="Alkaseltzer image" />
-                            <p>{item.precio}</p>
-                            <p>{item.quantity}</p>
+                            <p>{`Precio: ${item.precio} `}</p>
+                            <p>{`Cantidad: ${item.quantity} `}</p>
                         </div>
                     ))}
+                    <p>{`Total: ${cartTotalPayment()}`}</p>
                     <Link to={"/checkout"}>
                         <Button variant="primary">Checkout</Button>
                     </Link>
