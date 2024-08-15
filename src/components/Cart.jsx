@@ -2,18 +2,14 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import {totalAmount} from "../js/totalAmount"
 
 const Cart = () => {
     const { cartItems } = useContext(CartContext);
 
-    const totalAmount = ( ) => {
-        let sum = 0;
-        cartItems.map((item) => {
-            sum += item.quantity * item.price;
-        });
-        return sum;
-        
-    }
+    totalAmount();
+
+    
 
     if (cartItems.length === 0){
         return(
