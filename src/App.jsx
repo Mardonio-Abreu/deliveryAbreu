@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css'
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart'
-import Checkout from './components/Checkout'
+import CheckoutForm from './components/CheckoutForm';
 
 const App = () => {
  
@@ -19,7 +19,7 @@ const App = () => {
           <Route path = "/category/:categoryId" element = {<ItemListContainer />} />
           <Route path = "/item/:itemId" element = {<ItemDetail />} />
           <Route path = "/cart" element = {<Cart />}/> 
-          <Route path = "/checkout" element = {<Checkout />}/>         
+          <Route path = "/checkout" element = {<CheckoutForm />}/>         
         </Routes>
       </Router>
     </CartProvider>

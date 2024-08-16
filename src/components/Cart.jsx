@@ -2,10 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import {totalAmount} from "../js/totalAmount"
 
 const Cart = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, totalAmount } = useContext(CartContext);
 
     totalAmount();
 
