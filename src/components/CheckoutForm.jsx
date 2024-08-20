@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import db from '../db/db';
 import { collection, addDoc } from "firebase/firestore";
+import CartItems from "./CartItems";
 
 const CheckoutForm = () => {
   const { cartItems, totalAmount, deleteCart } = useContext(CartContext);
@@ -57,7 +58,8 @@ const CheckoutForm = () => {
           </div>
     
     ) : ( 
-
+      <>
+      <CartItems />
       <form className="form-checkout" onSubmit={saveOrder}>
         <label>Nombre</label>
         <input type="text" name="name" value={formData.name} onChange={saveInputData} />
@@ -76,6 +78,7 @@ const CheckoutForm = () => {
 
         <button className="sendOrder" type="submit">Enviar orden</button>
       </form>
+      </>
       )
     }
     </div>
