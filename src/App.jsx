@@ -6,8 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css'
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart'
-import CheckoutForm from './components/CheckoutForm';
-
+import CheckoutForm from './components/CheckoutForm'; 
 const App = () => {
  
   return (

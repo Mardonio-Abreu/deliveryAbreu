@@ -45,7 +45,19 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div>
+    <div className="checkout">
+      { idOrder ? 
+      
+      (
+        
+        
+          <div className="IdOrder">
+            <p>Orden correcta!</p>
+            <p>{`Order ID: ${idOrder}`}</p>
+          </div>
+    
+    ) : ( 
+
       <form className="form-checkout" onSubmit={saveOrder}>
         <label>Nombre</label>
         <input type="text" name="name" value={formData.name} onChange={saveInputData} />
@@ -64,6 +76,8 @@ const CheckoutForm = () => {
 
         <button className="sendOrder" type="submit">Enviar orden</button>
       </form>
+      )
+    }
     </div>
   );
 };
