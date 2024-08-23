@@ -11,12 +11,12 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.6.2",
     "dotenv": "^16.4.5",
     "firebase": "^10.12.4",
     "pnpm": "^9.6.0",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.2",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.24.0",
     "vite-plugin-wasm": "^3.3.0"

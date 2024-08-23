@@ -1,3 +1,7 @@
+.root{
+  margin:0;
+  padding:0;
+}
 
 .ItemCards {
   margin: 10px;
@@ -8,10 +12,11 @@
 
  .NavBar {
   display: inline-flex;
-  align-content: space-between;
- }
+  }
 
- .cartItem {
-  display: inline-flex;
-  margin: 15px;
+
+ .cartContainer {
+  text-align: left;
+  margin: 5;
+  padding: 5;
  }

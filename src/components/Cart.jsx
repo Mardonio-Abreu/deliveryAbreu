@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Cart = () => {
     const { cartItems, totalAmount } = useContext(CartContext);
@@ -23,21 +26,41 @@ const Cart = () => {
     } else {
 
             return (
+                <Container className="cartContainer">
                 <div className="cart">
                     {cartItems.map((item) => (
                         <div className="cartItem" key={item.id}>
-                            <p>{item.title}</p>
-                            <img src={`/src/img/${item.thumbnail}`} alt="Alkaseltzer image" />
-                            <p>{`Unidades: ${item.quantity}`}</p>
-                            <p>{`Precio: ${item.price} `}</p>
-                            
+                        <Row>
+                            <Col>
+                                <p>{item.title}</p>
+                            </Col>
+                            <Col>
+                                <img src={`/src/img/${item.thumbnail}`} alt="Alkaseltzer image" />
+                            </Col>
+                            <Col>
+                                <p>{`Unidades: ${item.quantity}`}</p>
+                            </Col>
+                            <Col>
+                                <p>{`Precio: ${item.price} `}</p>
+                            </Col>
+                        </Row>    
                         </div>
                     ))}
-                    <p>{`Total: ${totalAmount()}`}</p>
-                    <Link to={"/checkout"}>
-                        <Button variant="primary">Checkout</Button>
-                    </Link>
+                    <Row>
+                    <   Col>
+                            <p>{`Total: ${totalAmount()}`}</p>
+                        </Col>
+                    </Row>
+                    
+                    <Row>
+                        <Col>
+                        <Link to={"/checkout"}>
+                            <Button variant="primary">Checkout</Button>
+                        </Link>
+                        </Col>
+                    </Row>
                 </div>
+                </Container>
             );
         }    
 } 

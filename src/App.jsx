@@ -2,14 +2,15 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import NavBar from './components/NavBar'
 import ItemDetail from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '/src/App.css'
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart'
 import CheckoutForm from './components/CheckoutForm'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
  
   return (
+    <div className='root'>
     <CartProvider> 
       <Router>
       <NavBar/> 
@@ -22,6 +23,8 @@ const App = () => {
         </Routes>
       </Router>
     </CartProvider>
+    </div>
+    
   );
 };
 
