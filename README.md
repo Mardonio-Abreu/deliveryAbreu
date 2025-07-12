@@ -3,4 +3,4 @@
 
 Final project
 
-React 
+React + Firebase
